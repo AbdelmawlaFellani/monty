@@ -11,9 +11,8 @@ instruction_t *get_opcodes(void)
 		{"pall", pall_f},
 		{"pint", pint_f},
 		{"pop", pop_f},
+		{"add", add_f},
 		/**
-		 * {"pop", pop_f},
-		 * {"add", add_f},
 		 * {"sub", sub_f},
 		 * {"mul", mul_f},
 		 * {"div", div_f},
