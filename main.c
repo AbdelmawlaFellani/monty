@@ -1,5 +1,4 @@
 #define  _POSIX_C_SOURCE 200809L
-#include <stdio.h>
 #include "monty.h"
 
 global_t data = {0};
