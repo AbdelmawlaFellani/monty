@@ -39,3 +39,20 @@ void pall_f(stack_t **stack, uint line_number)
 		temp = temp->next;
 	}
 }
+/**
+ * pint_f - prints the value at the top of stack
+ * @stack: pointer to the head of the stack
+ * @line_number: line number of the command being run
+ * Return: void
+ */
+void pint_f(stack_t **stack, uint line_number)
+{
+	
+	if (!*stack)
+	{
+		fprintf(stderr,"L%d: can't pint, stack empty\n", line_number);
+		exit(EXIT_FAILURE);
+	}
+        
+	printf("%d\n", (*stack)->n);
+}
