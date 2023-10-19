@@ -9,13 +9,15 @@ instruction_t *get_opcodes(void)
 	static instruction_t opcodes[] = {
 		{"push", push_f},
 		{"pall", pall_f},
-		/*{"pop", pop_f},
-		{"add", add_f},
-		{"sub", sub_f},
-		{"mul", mul_f},
-		{"div", div_f},
-		{"swap", swap_f},
-		{"mod", mod_f},*/
+		/**
+		 * {"pop", pop_f},
+		 * {"add", add_f},
+		 * {"sub", sub_f},
+		 * {"mul", mul_f},
+		 * {"div", div_f},
+		 * {"swap", swap_f},
+		 * {"mod", mod_f},
+		 */
 		{NULL, NULL}
 	};
 	return (opcodes);
