@@ -56,3 +56,22 @@ void pint_f(stack_t **stack, uint line_number)
         
 	printf("%d\n", (*stack)->n);
 }
+/**
+ * pop_f - removes the top element of the stack
+ * @stack: pointer to the head of the stack
+ * @line_number: line number of the command being run
+ * Return: void
+ */
+void pop_f(stack_t **stack, uint line_number)
+{
+	stack_t *temp;
+
+        if (!*stack)
+        {
+                fprintf(stderr,"L%d: can't pop an empty stack\n", line_number);
+                exit(EXIT_FAILURE);
+        }
+	temp = *stack;
+	*stack = (*stack)->next;
+	free(temp);
+}

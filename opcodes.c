@@ -10,6 +10,7 @@ instruction_t *get_opcodes(void)
 		{"push", push_f},
 		{"pall", pall_f},
 		{"pint", pint_f},
+		{"pop", pop_f},
 		/**
 		 * {"pop", pop_f},
 		 * {"add", add_f},
