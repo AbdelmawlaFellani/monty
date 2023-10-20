@@ -28,3 +28,27 @@ void nop_f(stack_t **stack, uint line_number)
 	(void)stack;
 	(void)line_number;
 }
+/**
+ * sub_f - subtracts the top element of the stack from
+ * the second top element of the stack.
+ * @stack: pointer to the head of the stack
+ * @line_number: line number of the connand being run
+ */
+void sub_f(stack_t **stack, uint line_number)
+{
+	int diff;
+	stack_t *temp;
+
+	if (!*stack || !(*stack)->next)
+        {
+                fprintf(stderr, "L%d: can't sub, stack too short\n", line_number);
+                exit(EXIT_FAILURE);
+        }
+
+	diff = (*stack)->next->n - (*stack)->n;
+	temp = *stack;
+	*stack = (*stack)->next;
+	(*stack)->n = diff;
+
+	free(temp);
+}
