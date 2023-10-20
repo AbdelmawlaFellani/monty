@@ -40,10 +40,10 @@ void sub_f(stack_t **stack, uint line_number)
 	stack_t *temp;
 
 	if (!*stack || !(*stack)->next)
-        {
-                fprintf(stderr, "L%d: can't sub, stack too short\n", line_number);
-                exit(EXIT_FAILURE);
-        }
+	{
+		fprintf(stderr, "L%d: can't sub, stack too short\n", line_number);
+		exit(EXIT_FAILURE);
+	}
 
 	diff = (*stack)->next->n - (*stack)->n;
 	temp = *stack;
