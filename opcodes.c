@@ -14,6 +14,7 @@ instruction_t *get_opcodes(void)
 		{"add", add_f},
 		{"swap", swap_f},
 		{"nop", nop_f},
+		{"sub", sub_f},
 		/**
 		 * {"sub", sub_f},
 		 * {"mul", mul_f},
