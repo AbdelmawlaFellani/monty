@@ -1,7 +1,7 @@
 #include "monty.h"
 
 /**
- * swap - swaps the top two elements of a stack
+ * swap_f - swaps the top two elements of a stack
  * @stack: pointer to the head of the stack
  * @line_number: line number of the command being run
  */
@@ -19,7 +19,7 @@ void swap_f(stack_t **stack, uint line_number)
 	(*stack)->next->n = temp;
 }
 /**
- * nop - does nothing
+ * nop_f - does nothing
  * @stack: pointer to the head of the stack
  * @line_number: line number of the command being run
  */
