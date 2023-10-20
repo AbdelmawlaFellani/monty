@@ -72,6 +72,8 @@ void swap_f(stack_t **stack, uint line_number);
 void nop_f(stack_t **stack, uint line_number);
 void sub_f(stack_t **stack, uint line_number);
 void mul_f(stack_t **stack, uint line_number);
+void mod_f(stack_t **stack, uint line_number);
+void div_f(stack_t **stack, uint line_number);
 int is_number(char *str);
 void (*get_op_func(char *opcode))(stack_t **stack, uint line_number);
 stack_t *add_node(stack_t **head, const int n);

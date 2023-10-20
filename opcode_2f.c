@@ -74,4 +74,30 @@ void mul_f(stack_t **stack, uint line_number)
 	(*stack)->n = product;
 	free(temp);
 }
+/**
+ * mod_f - Computes the remainder of the second top element of the stack
+ * @stack: pointer to the head of the stack
+ * @line_number: line number of the command being run
+ */
+void mod_f(stack_t **stack, uint line_number)
+{
+	int remainder;
+	stack_t *temp;
 
+	if (!*stack || !(*stack)->next)
+	{
+		fprintf(stderr, "L%d: can't mod, stack too short\n", line_number);
+		exit(EXIT_FAILURE);
+	}
+	if ((*stack)->n == 0)
+	{
+		fprintf(stderr, "L%d: division by zero\n", line_number);
+		exit(EXIT_FAILURE);
+	}
+
+	remainder = (*stack)->next->n % (*stack)->n;
+	temp = *stack;
+	*stack = (*stack)->next;
+	(*stack)->n = remainder;
+	free(temp);
+}
