@@ -52,3 +52,26 @@ void sub_f(stack_t **stack, uint line_number)
 
 	free(temp);
 }
+/**
+ * mul_f - multiplies the top two elements of the stack
+ * @stack: pointer to the head of the stack
+ * @line_number: line number of the command being run
+ */
+void mul_f(stack_t **stack, uint line_number)
+{
+	int product;
+	stack_t *temp;
+
+	if (!*stack || !(*stack)->next)
+	{
+		fprintf(stderr, "L%d: can't mul, stack too short\n", line_number);
+		exit(EXIT_FAILURE);
+	}
+
+	product = (*stack)->next->n * (*stack)->n;
+	temp = *stack;
+	*stack = (*stack)->next;
+	(*stack)->n = product;
+	free(temp);
+}
+
