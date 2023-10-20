@@ -27,3 +27,28 @@ void div_f(stack_t **stack, uint line_number)
 	(*stack)->n = quotient;
 	free(temp);
 }
+/**
+ * pchar_f - prints the char at the top of the stack, followed by a new line.
+ * @stack: pointer to the head of the stack
+ * @line_number: line number of the command being run
+ */
+void pchar_f(stack_t **stack, uint line_number)
+{
+	int c;
+
+	if (!*stack)
+	{
+		fprintf(stderr, "L%d: can't pchar, stack empty\n", line_number);
+		exit(EXIT_FAILURE);
+	}
+
+	c = (*stack)->n;
+
+	if (c < 0 || c > 127)
+	{
+		fprintf(stderr, "L%d: can't pchar, value out of range\n", line_number);
+		exit(EXIT_FAILURE);
+	}
+
+	printf("%c\n", c);
+}

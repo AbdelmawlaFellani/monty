@@ -18,6 +18,7 @@ instruction_t *get_opcodes(void)
 		{"mul", mul_f},
 		{"mod", mod_f},
 		{"div", div_f},
+		{"pchar", pchar_f},
 		{NULL, NULL}
 	};
 	return (opcodes);
